@@ -21,7 +21,8 @@
     "assets/",
     "docs/",
     "README.md",
-    "README.en.md"
+    "README.en.md",
+    "scripts/"
   ],
   "dsh": {
     "bundle": {
