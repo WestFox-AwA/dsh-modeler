@@ -6,7 +6,7 @@
 
 `dsh-modeler` turns a DSH chat session into a persistent, versioned 3D modeling workspace. Agents create and edit geometry, prepare PBR materials, observe the result through real Three.js renders, and deliver the exact version — without leaving the harness.
 
-> Current version **`1.0.0-alpha-1`**. Usable and tested, but alpha releases may still adjust tool contracts.
+> Current version **`1.0.0-alpha-2`**. Usable and tested, but alpha releases may still adjust tool contracts.
 
 ## Showcase
 
@@ -56,7 +56,7 @@ Most "AI + 3D" setups stop at generating a mesh file. `dsh-modeler` gives the ag
 
 ### From a GitHub release (recommended)
 
-1. Open **Releases** and download `dsh-modeler-1.0.0-alpha-1.zip`.
+1. Open **Releases** and download `dsh-modeler-1.0.0-alpha-2.zip`.
 2. Extract it to a stable absolute path, for example:
    - Windows: `C:\Users\<you>\dsh-modeler`
    - macOS/Linux: `~/dsh-modeler`
@@ -145,7 +145,7 @@ scripts/build.mjs     Bundles src/ into client.js and capture.js
 
 ## Versioning and license
 
-`1.0.0-alpha-1` is the first public alpha. Tool contracts are documented through `modeler_workbench {action:"help"}` and the guides; alpha releases may still adjust behavior. Pin a release if you need stability.
+`1.0.0-alpha-2` is the second public alpha. Tool contracts are documented through `modeler_workbench {action:"help"}` and the guides; alpha releases may still adjust behavior. Pin a release if you need stability.
 
 [MIT](LICENSE) © WestFox-AwA
 

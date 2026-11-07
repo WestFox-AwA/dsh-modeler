@@ -1,6 +1,6 @@
 {
   "name": "@local/dsh-modeler",
-  "version": "1.0.0-alpha-1",
+  "version": "1.0.0-alpha-2",
   "private": true,
   "type": "module",
   "description": "DSH 内置建模工作室：以 Three.js 为核心的可编辑持久 3D 资产、自动材质准备、统一观察意图与版本化交付。",
