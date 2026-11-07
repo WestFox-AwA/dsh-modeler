@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
-const shared=['src/host/kernel.js','src/host/topology.js','src/host/generate.js','src/host/spec-validation.js','src/host/sdf.js','src/host/relations.js','src/host/mesh-cut.js','src/host/path-system.js','src/host/role-checks.js','src/host/curves.js','src/host/solid-boolean.js','src/host/plastic.js','src/host/control-surface.js','src/host/form-body.js','src/host/isosurface.js','src/host/native-mesh.js'];
+const shared=['src/host/kernel.js','src/host/topology.js','src/host/generate.js','src/host/spec-validation.js','src/host/sdf.js','src/host/relations.js','src/host/mesh-cut.js','src/host/path-system.js','src/host/role-checks.js','src/host/curves.js','src/host/solid-boolean.js','src/host/plastic.js','src/host/control-surface.js','src/host/form-body.js','src/host/isosurface.js','src/host/native-mesh.js','src/vendor/three.js'];
 const rendering=['src/client.transport.js','src/client.studio.js','src/client.workbench.js','src/client.export.js','src/client.material.js','src/client.environment.js','src/client.floor.js','src/host/material-source.js','src/host/material-surface.js','src/host/material-detail.js','src/client.surface.js','src/client.geometry.js','src/client.selection.js','src/client.shading.js','src/client.observation.js','src/host/observation-stage.js','src/host/observation-purpose.js','src/client.render.js','src/capture.worker.js','src/host/camera.js'];
 export const sha256=bytes=>createHash('sha256').update(bytes).digest('hex');
 export function sharedKernelHash(root){return sha256(shared.map(file=>file+'\n'+sha256(fs.readFileSync(path.join(root,file)))).join('\n'));}

@@ -1,7 +1,7 @@
 import {SelectionOverlay} from './client.selection.js';
 import {materialTextures,applyRenderStage,disposeRenderStage} from './client.shading.js';
 import {applyObservationStage,disposeObservationStage,disposeObservationOutline,renderObservationFrame} from './client.observation.js';
-import * as THREE from 'three';
+import * as THREE from './vendor/three.js';
 import {createStudioEnvironment} from './client.environment.js';
 import {evaluateDoc,KERNEL_VERSION} from './host/kernel.js';
 import {resolveCamera} from './host/camera.js';

@@ -9,7 +9,7 @@
  * Signed gap = dot(source.origin-target.origin,target.normal), positive outward;
  * insertDepth = -gap. Explicit/source/bounds frames do not certify final surfaces.
  */
-import {Matrix4,Vector3,Quaternion,Euler} from 'three';
+import {Matrix4,Vector3,Quaternion,Euler} from '../vendor/three.js';
 import {evaluateDoc} from './kernel.js';
 import {identityMatrix,objectMatrix,multiplyMatrix,inverseMatrix,transformPoint,transformDirection} from './relations.js';
 import {trianglesFromPositions,nearestSurface} from './spatial-query.js';

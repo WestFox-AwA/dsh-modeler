@@ -44,7 +44,7 @@
  * align:false changes only position and preserves own rotation/scale exactly,
  * even through inherited affine shear. No source/asset writes occur here.
  */
-import { Matrix4, Vector3, Quaternion, Euler } from "three";
+import { Matrix4, Vector3, Quaternion, Euler } from "../vendor/three.js";
 import { checkInterfaceRelations } from "./assembly-interfaces.js";
 import { checkSolidRelation } from "./solid-relations.js";
 import { evaluateDoc } from "./kernel.js";

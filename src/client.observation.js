@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './vendor/three.js';
 import {createPlanarFloor} from './client.floor.js';
 import {observationCameraClipping} from './host/camera.js';
 import {normalizeObservationLighting,rebaseObservationLighting,resolveObservationPlan,OBSERVATION_STAGE_LIMITS} from './host/observation-stage.js';

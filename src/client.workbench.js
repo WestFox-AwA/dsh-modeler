@@ -4,7 +4,7 @@ import {studioStyles} from './client.studio.js';
 import {nativeComponents} from './client.geometry.js';
 import {surfaceComponents} from './client.surface.js';
 import {materialComponents} from './client.material.js';
-import * as THREE from 'three';
+import * as THREE from './vendor/three.js';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {TransformControls} from 'three/addons/controls/TransformControls.js';
 import {exportSnapshotGlb} from './client.export.js';

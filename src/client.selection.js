@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './vendor/three.js';
 // Selection is a versioned observation, never an independent editable mesh.
 export class SelectionOverlay {
  constructor(scene){this.scene=scene;this.group=new THREE.Group();this.group.name='Modeler selection';this.group.renderOrder=1001;scene.add(this.group);}

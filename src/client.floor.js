@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './vendor/three.js';
 import {observationCameraClipping} from './host/camera.js';
 
 const NAME='modeler-observation-floor';

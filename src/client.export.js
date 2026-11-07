@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './vendor/three.js';
 import {GLTFExporter} from 'three/addons/exporters/GLTFExporter.js';
 import {createSnapshotMeshes,disposeMeshes} from './client.render.js';
 import {KERNEL_VERSION} from './host/kernel.js';

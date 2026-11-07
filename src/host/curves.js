@@ -1,4 +1,4 @@
-import {Vector2,Vector3,CurvePath,CubicBezierCurve3,CatmullRomCurve3,ShapeUtils} from 'three';
+import {Vector2,Vector3,CurvePath,CubicBezierCurve3,CatmullRomCurve3,ShapeUtils} from '../vendor/three.js';
 const finite=v=>typeof v==='number'&&Number.isFinite(v),int=(v,d,lo,hi,label)=>{v=v??d;if(!Number.isInteger(v)||v<lo||v>hi)throw new Error(`${label} must be ${lo}..${hi}`);return v;};
 export function normalizeCurve(desc){
  if(!desc||typeof desc!=='object'||!['bezier','catmullrom'].includes(desc.type))throw new Error('curve.type must be bezier or catmullrom');

@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './vendor/three.js';
 
 // Synchronous, material-owned UV maps. No image loaders, external sources or
 // shared texture cache are used here. Every descriptor field is validated.

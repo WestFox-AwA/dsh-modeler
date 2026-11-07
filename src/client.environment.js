@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './vendor/three.js';
 
 // One linear-radiance environment per studio; captures borrow it explicitly.
 // A smooth 3-D directional function has no latitude branches or pole seams.
