@@ -3,11 +3,11 @@ import {materialTextures,applyRenderStage,disposeRenderStage} from './client.sha
 import {applyObservationStage,disposeObservationStage,disposeObservationOutline,renderObservationFrame} from './client.observation.js';
 import * as THREE from 'three';
 import {createStudioEnvironment} from './client.environment.js';
-import {evaluateDoc,KERNEL_VERSION} from './lib/kernel.js';
-import {resolveCamera} from './lib/camera.js';
-import {resolveCaptureSelection} from './lib/observation-purpose.js';
-import {renderMaterialSpec} from './lib/material-source.js';
-import {OBSERVATION_MODES,DISPLAY_MODES,OBSERVATION_LIGHTING_DEFAULTS,normalizeObservationLighting,rebaseObservationLighting} from './lib/observation-stage.js';
+import {evaluateDoc,KERNEL_VERSION} from '../lib/kernel.js';
+import {resolveCamera} from '../lib/camera.js';
+import {resolveCaptureSelection} from '../lib/observation-purpose.js';
+import {renderMaterialSpec} from '../lib/material-source.js';
+import {OBSERVATION_MODES,DISPLAY_MODES,OBSERVATION_LIGHTING_DEFAULTS,normalizeObservationLighting,rebaseObservationLighting} from '../lib/observation-stage.js';
 
 export {OBSERVATION_MODES,DISPLAY_MODES};
 export {applyObservationStage,disposeObservationStage,disposeObservationOutline,renderObservationFrame};

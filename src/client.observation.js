@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {createPlanarFloor} from './client.floor.js';
-import {observationCameraClipping} from './lib/camera.js';
-import {normalizeObservationLighting,rebaseObservationLighting,resolveObservationPlan,OBSERVATION_STAGE_LIMITS} from './lib/observation-stage.js';
+import {observationCameraClipping} from '../lib/camera.js';
+import {normalizeObservationLighting,rebaseObservationLighting,resolveObservationPlan,OBSERVATION_STAGE_LIMITS} from '../lib/observation-stage.js';
 const ROLE_ORDER=['hemisphere','key','fill','rim'];
 const TARGET_ROLES=['key','fill','rim'];
 const LINE_COLORS={wireframe:'#26303c',outline:'#16202e'};

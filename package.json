@@ -23,21 +23,9 @@
     "docs/",
     "README.md",
     "capture.js",
-    "client.render.js",
-    "client.observation.js",
-    "client.environment.js",
-    "client.floor.js",
-    "capture.worker.js",
-    "client.workbench.js",
+    "src/",
     "runtime/",
-    "client.surface.js",
-    "client.geometry.js",
-    "client.shading.js",
-    "client.selection.js",
-    "client.export.js",
-    "client.material.js",
-    "client.transport.js",
-    "client.studio.js"
+    "README.en.md"
   ],
   "dsh": {
     "bundle": {

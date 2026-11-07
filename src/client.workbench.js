@@ -8,9 +8,9 @@ import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {TransformControls} from 'three/addons/controls/TransformControls.js';
 import {exportSnapshotGlb} from './client.export.js';
-import {evaluateObject,KERNEL_VERSION} from './lib/kernel.js';
-import {resolveCamera} from './lib/camera.js';
-import {OBSERVATION_LIGHTING_DEFAULTS as STUDIO_DEFAULTS} from './lib/observation-stage.js';
+import {evaluateObject,KERNEL_VERSION} from '../lib/kernel.js';
+import {resolveCamera} from '../lib/camera.js';
+import {OBSERVATION_LIGHTING_DEFAULTS as STUDIO_DEFAULTS} from '../lib/observation-stage.js';
 import {CaptureRenderer,createStudioRenderer,createSnapshotMeshes,disposeMeshes,observationBounds,setObservation,applyStudioStage,applyObservationStage,disposeObservationStage,renderObservationFrame,OBSERVATION_MODES,OBSERVATION_HELP,DISPLAY_MODES,DISPLAY_MODE_HELP} from './client.render.js';
 
 const API='/api/modeler/workbench';

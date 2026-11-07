@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import * as T from 'three';
-import {PlanarFloor,createGroundGeometry} from '../client.floor.js';
+import {PlanarFloor,createGroundGeometry} from '../src/client.floor.js';
 import {observationCameraClipping} from '../lib/camera.js';
 const tests=[];const check=(name,fn)=>{try{const detail=fn();tests.push({name,passed:true,detail});}catch(e){tests.push({name,passed:false,error:e.stack});}};
 const bits=24,levels=2**bits-1;

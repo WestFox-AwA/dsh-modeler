@@ -2,7 +2,7 @@ import fs from 'node:fs';import path from 'node:path';import assert from 'node:a
 import {resolveCaptureSelection,CAPTURE_PURPOSES,PURPOSE_DISPLAY_MODES,purposeForEdit,observationForEdit,editObservationRequest} from '../lib/observation-purpose.js';
 import {createModelerOperations} from '../lib/operations.js';
 import {createEvidenceStore,normaliseCapture} from '../lib/evidence.js';
-import {normalizeObservation,createSnapshotMeshes,disposeMeshes} from '../client.render.js';
+import {normalizeObservation,createSnapshotMeshes,disposeMeshes} from '../src/client.render.js';
 import {runModelerScript} from '../lib/script.js';import {KERNEL_VERSION} from '../lib/kernel.js';import {resolveCamera} from '../lib/camera.js';import {encodePng} from '../lib/png.js';
 const tests=[];async function check(name,fn){try{await fn();tests.push({name,passed:true});}catch(e){tests.push({name,passed:false,error:e.stack});}}
 const temp=fs.mkdtempSync(path.resolve('tests/.observation-purpose-'));

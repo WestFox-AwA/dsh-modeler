@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {GLTFExporter} from 'three/addons/exporters/GLTFExporter.js';
 import {createSnapshotMeshes,disposeMeshes} from './client.render.js';
-import {KERNEL_VERSION} from './lib/kernel.js';
+import {KERNEL_VERSION} from '../lib/kernel.js';
 
 const MAPS=['map','normalMap','roughnessMap','metalnessMap','emissiveMap','aoMap','clearcoatMap','clearcoatRoughnessMap'];
 function canvasFor(image){

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {createRecipeMaterial,createFinishSpec,prepareMaterialIntents} from '../lib/material-intent.js';
 import {createSurfaceRecipe,surfaceRecipes} from '../lib/material-recipes.js';
-import {material} from '../client.render.js';
+import {material} from '../src/client.render.js';
 import {getModelerGuide,MODELER_GUIDE_PROMPT} from '../lib/guide-system.js';
 const tests=[];const test=(name,fn)=>{try{fn();tests.push({name,passed:true});}catch(e){tests.push({name,passed:false,error:e.stack});}};
 test('glass recipe exposes optical distance separately from object geometry',()=>{

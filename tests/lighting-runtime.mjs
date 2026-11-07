@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 import * as T from 'three';
-import {studioRadiance,environmentPixels} from '../client.environment.js';
-import {reflectedCamera,clipReflectionCamera,PlanarFloor,injectPlanarReflection} from '../client.floor.js';
+import {studioRadiance,environmentPixels} from '../src/client.environment.js';
+import {reflectedCamera,clipReflectionCamera,PlanarFloor,injectPlanarReflection} from '../src/client.floor.js';
 import {observationCameraClipping} from '../lib/camera.js';
-import {createObservationStage} from '../client.observation.js';
-import {applyStudioStage} from '../client.render.js';
+import {createObservationStage} from '../src/client.observation.js';
+import {applyStudioStage} from '../src/client.render.js';
 import {runModelerScript} from '../lib/script.js';
 import {evaluateDoc} from '../lib/kernel.js';
 const tests=[];

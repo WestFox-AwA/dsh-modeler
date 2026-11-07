@@ -36,8 +36,8 @@ import {
   applyStudioStage,
   observationDiagnosticInfo,
   renderObservationFrame,
-} from '../client.render.js';
-import {createObservationStage,applyObservationStage,disposeObservationStage,createOutlineCompositor,outlineColorForIndex,outlineEdgeMask,outlineIdForMesh,outlineAssignments} from '../client.observation.js';
+} from '../src/client.render.js';
+import {createObservationStage,applyObservationStage,disposeObservationStage,createOutlineCompositor,outlineColorForIndex,outlineEdgeMask,outlineIdForMesh,outlineAssignments} from '../src/client.observation.js';
 
 const here=path.dirname(fileURLToPath(import.meta.url));
 const temp=fs.mkdtempSync(path.join(here,'.observation-stage-'));
@@ -424,8 +424,8 @@ await check('viewport and capture share studio defaults for omitted authored sta
   assert.equal(keyLight.color,STUDIO_CONFIG.keyColor);
   assert.equal(keyLight.intensity,STUDIO_CONFIG.keyIntensity);
   assert.deepEqual(keyLight.position,[...STUDIO_CONFIG.keyPosition]);
-  const workbenchSource=fs.readFileSync(path.join(here,'..','client.workbench.js'),'utf8');
-  const renderSource=fs.readFileSync(path.join(here,'..','client.render.js'),'utf8');
+  const workbenchSource=fs.readFileSync(path.join(here,'..','src/client.workbench.js'),'utf8');
+  const renderSource=fs.readFileSync(path.join(here,'..','src/client.render.js'),'utf8');
   assert(workbenchSource.includes('applyStudioStage(this.studio,snapshot.doc.meta?.renderStage)'));
   assert(!workbenchSource.includes('applyRenderStage(this.studio,snapshot.doc.meta?.renderStage)'));
   assert(renderSource.includes('applyStudioStage(this.studio,this.renderStage)'));
