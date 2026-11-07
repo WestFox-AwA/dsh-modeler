@@ -1,6 +1,6 @@
 # Assembly, interfaces, relations and contact intent
 
-> Generated from `lib/guide-system.js`; do not hand-edit. Runtime source of truth:
+> Generated from `src/host/guide-system.js`; do not hand-edit. Runtime source of truth:
 > `{"tool":"modeler_workbench","args":{"action":"guide","args":{"id":"assembly"}}}`.
 > Call descriptors shaped {tool,args} mean: invoke that tool with args. Do not pass the tool field as a tool argument.
 

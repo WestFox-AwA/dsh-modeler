@@ -82,7 +82,7 @@
 git clone https://github.com/WestFox-AwA/dsh-modeler.git
 cd dsh-modeler
 npm install
-node build.mjs
+node scripts/build.mjs
 ```
 
 然后按第 4 步用 `install_bundle` 安装仓库目录，并刷新页面。
@@ -128,15 +128,15 @@ modeler_capture   {purpose:"appearance"}                  # 材质截图
 ## 仓库结构
 
 ```text
-index.js              Host 插件：工具、路由、资源接线
-src/                  浏览器端源码：工作台、渲染、观察、地板、材质
+index.js              Host 插件入口：工具、路由、资源接线
+src/                  源码：client.*（浏览器）、host/（Host 逻辑）、runtime/（Blender worker）
 client.js             构建后的浏览器包（DSH 直接加载）
 capture.js            构建后的截图渲染包
-lib/                  内核、工作区、材质、证据、指南、操作
-runtime/              可选 Blender 原生几何/材质 worker
+dist/                 构建身份（client-build.json）
+assets/               图标、locale、Cordis 补丁
 docs/                 代理指南与契约（从 docs/AGENT-GUIDE.md 开始）
 tests/                自包含回归套件
-build.mjs             打包 src/ → client.js 与 capture.js
+scripts/build.mjs     打包 src/ → client.js 与 capture.js
 ```
 
 ## 数据与隐私

@@ -4,8 +4,8 @@ import { pathToFileURL } from 'node:url';
 // A check that reports interpenetration must not fire on parts that merely
 // touch, and must fire on parts that genuinely cross. These fixtures pin both
 // ends, plus the shapes a real vehicle is made of (barrel through a plate).
-const { runModelerScript } = await import(pathToFileURL(path.resolve('lib/script.js')).href);
-const { auditIntersections } = await import(pathToFileURL(path.resolve('lib/intersect.js')).href);
+const { runModelerScript } = await import(pathToFileURL(path.resolve('src/host/script.js')).href);
+const { auditIntersections } = await import(pathToFileURL(path.resolve('src/host/intersect.js')).href);
 
 const tests = [];
 function test(name, run) {

@@ -3,9 +3,9 @@ import { pathToFileURL } from 'node:url';
 
 // Section dimensions must mean what a vehicle author expects: full width, full
 // height, and y as the bottom face. Getting this wrong doubles every body.
-const { runModelerScript } = await import(pathToFileURL(path.resolve('lib/script.js')).href);
-const { worldBounds } = await import(pathToFileURL(path.resolve('lib/assembly.js')).href);
-const { auditDoc } = await import(pathToFileURL(path.resolve('lib/audit.js')).href);
+const { runModelerScript } = await import(pathToFileURL(path.resolve('src/host/script.js')).href);
+const { worldBounds } = await import(pathToFileURL(path.resolve('src/host/assembly.js')).href);
+const { auditDoc } = await import(pathToFileURL(path.resolve('src/host/audit.js')).href);
 
 const tests = [];
 const build = (code) => { const doc = runModelerScript(code); return { doc, box: worldBounds(doc)[0], audit: auditDoc(doc) }; };

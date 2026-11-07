@@ -4,9 +4,9 @@ import { pathToFileURL } from 'node:url';
 // Mirroring is the operation most likely to leave inside-out geometry, and the
 // naive route (a negative scale) is silently clamped away by the doc validator,
 // which deletes the part instead of complaining.
-const { runModelerScript } = await import(pathToFileURL(path.resolve('lib/script.js')).href);
-const { auditDoc } = await import(pathToFileURL(path.resolve('lib/audit.js')).href);
-const { worldBounds } = await import(pathToFileURL(path.resolve('lib/assembly.js')).href);
+const { runModelerScript } = await import(pathToFileURL(path.resolve('src/host/script.js')).href);
+const { auditDoc } = await import(pathToFileURL(path.resolve('src/host/audit.js')).href);
+const { worldBounds } = await import(pathToFileURL(path.resolve('src/host/assembly.js')).href);
 
 const tests = [];
 function test(name, run) {

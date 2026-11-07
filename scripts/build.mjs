@@ -1,10 +1,12 @@
 import {build} from 'esbuild';
 import fs from 'node:fs';
-import {sharedKernelHash,renderingHash,sha256} from './lib/build-info.js';
-const root=process.cwd(),kernelBuildId=sharedKernelHash(root),renderHash=renderingHash(root);
+import path from 'node:path';import {fileURLToPath} from 'node:url';
+import {sharedKernelHash,renderingHash,sha256} from '../src/host/build-info.js';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');process.chdir(root);
+const kernelBuildId=sharedKernelHash(root),renderHash=renderingHash(root);
 const clientBuildId=sha256(kernelBuildId+'\n'+renderHash+'\n'+fs.readFileSync('package.json','utf8'));
 const define={__MODELER_CLIENT_BUILD__:JSON.stringify(clientBuildId)};
 await build({entryPoints:['src/client.workbench.js'],bundle:true,format:'iife',minify:true,platform:'browser',target:['chrome110'],external:['react'],define,outfile:'client.js',banner:{js:'/* DSH Modeler: shared viewport and snapshot-render studio. */'},logLevel:'info'});
 await build({entryPoints:['src/capture.worker.js'],bundle:true,format:'iife',minify:true,platform:'browser',target:['chrome110'],define,outfile:'capture.js',logLevel:'info'});
-fs.writeFileSync('client-build.json',JSON.stringify({clientBuildId,kernelBuildId,renderingHash:renderHash,bundleHash:sha256(fs.readFileSync('client.js')),captureBundleHash:sha256(fs.readFileSync('capture.js'))},null,2)+'\n');
+fs.writeFileSync('dist/client-build.json',JSON.stringify({clientBuildId,kernelBuildId,renderingHash:renderHash,bundleHash:sha256(fs.readFileSync('client.js')),captureBundleHash:sha256(fs.readFileSync('capture.js'))},null,2)+'\n');
 console.log('viewport',(fs.statSync('client.js').size/1024/1024).toFixed(2),'MiB; capture',(fs.statSync('capture.js').size/1024/1024).toFixed(2),'MiB; build',clientBuildId.slice(0,12));

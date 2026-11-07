@@ -2,13 +2,13 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {getModelerHelp,quickStart,scriptApi} from '../lib/discovery.js';
-import {makeApi,runModelerScript} from '../lib/script.js';
-import {evaluateDoc,evaluateObject} from '../lib/kernel.js';
-import {createWorkspace} from '../lib/workspace.js';
-import {normaliseCapture} from '../lib/evidence.js';
-import {resolveCamera} from '../lib/camera.js';
-import {diagnoseDoc} from '../lib/diagnostics.js';
+import {getModelerHelp,quickStart,scriptApi} from '../src/host/discovery.js';
+import {makeApi,runModelerScript} from '../src/host/script.js';
+import {evaluateDoc,evaluateObject} from '../src/host/kernel.js';
+import {createWorkspace} from '../src/host/workspace.js';
+import {normaliseCapture} from '../src/host/evidence.js';
+import {resolveCamera} from '../src/host/camera.js';
+import {diagnoseDoc} from '../src/host/diagnostics.js';
 
 const tests=[];
 function check(name,fn){try{fn();tests.push({name,passed:true});}catch(e){tests.push({name,passed:false,error:e.stack});}}

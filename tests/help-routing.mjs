@@ -7,8 +7,8 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {build} from 'esbuild';
-import {assertToolValue} from '../lib/tool-value.js';
-import {getModelerGuide, MODELER_GUIDE_IDS} from '../lib/guide-system.js';
+import {assertToolValue} from '../src/host/tool-value.js';
+import {getModelerGuide, MODELER_GUIDE_IDS} from '../src/host/guide-system.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const temp = fs.mkdtempSync(path.join(root, 'tests/.help-routing-'));
@@ -23,8 +23,8 @@ const catalogBytes = () => { const file = path.join(store(), 'modeler-resources'
 const takeCalls = () => { const value = fs.existsSync(callLog) ? fs.readFileSync(callLog, 'utf8').split(/\r?\n/).filter(Boolean) : []; if (fs.existsSync(callLog)) fs.rmSync(callLog); return [...new Set(value)]; };
 try {
   fs.writeFileSync(wrapper, `import fs from 'node:fs';
-import * as real from ${JSON.stringify(path.join(root, 'lib/resources.js'))};
-export * from ${JSON.stringify(path.join(root, 'lib/resources.js'))};
+import * as real from ${JSON.stringify(path.join(root, 'src/host/resources.js'))};
+export * from ${JSON.stringify(path.join(root, 'src/host/resources.js'))};
 export function createResources(options){
  const log = name => fs.appendFileSync(${JSON.stringify(callLog)}, name + '\\n');
  const r = real.createResources(options);

@@ -3,9 +3,9 @@ import { pathToFileURL } from 'node:url';
 
 // Splitting must preserve geometry exactly: same triangles overall, same bounds,
 // and each half must keep the material it was given.
-const { runModelerScript } = await import(pathToFileURL(path.resolve('lib/script.js')).href);
-const { worldBounds } = await import(pathToFileURL(path.resolve('lib/assembly.js')).href);
-const { auditDoc } = await import(pathToFileURL(path.resolve('lib/audit.js')).href);
+const { runModelerScript } = await import(pathToFileURL(path.resolve('src/host/script.js')).href);
+const { worldBounds } = await import(pathToFileURL(path.resolve('src/host/assembly.js')).href);
+const { auditDoc } = await import(pathToFileURL(path.resolve('src/host/audit.js')).href);
 
 const tests = [];
 const solid = `m.hull([{ w: 2, h: 1.2, y: 0, z: -1.5 }, { w: 2, h: 1.2, y: 0, z: 1.5 }], {}, 'Body').mat(m.mat('#888888'))`;

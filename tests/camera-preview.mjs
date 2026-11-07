@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
 import * as THREE from 'three';
-import { resolveCamera } from '../lib/camera.js';
-import { rasterDoc, formatTextPreview, diffRaster } from '../lib/raster.js';
-import { runModelerScript } from '../lib/script.js';
-import { objectPositions } from '../lib/analyze.js';
+import { resolveCamera } from '../src/host/camera.js';
+import { rasterDoc, formatTextPreview, diffRaster } from '../src/host/raster.js';
+import { runModelerScript } from '../src/host/script.js';
+import { objectPositions } from '../src/host/analyze.js';
 
 // Independent oracles: THREE's camera matrices/project(), and Raycaster's exact
 // ray/triangle intersections. No screenshots, live model or WebGL is required.

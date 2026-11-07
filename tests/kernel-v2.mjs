@@ -2,9 +2,9 @@ import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import { readFile } from 'node:fs/promises';
 import { build } from 'esbuild';
-import { buildRecipe, evaluateObject, evaluateDoc, applyMeshModifiers, KERNEL_VERSION } from '../lib/kernel.js';
-import { indexMesh, moveVertices, extrudeFaces, meshPositions, meshEdges, WELD_TOLERANCE } from '../lib/topology.js';
-import { box, sphere, lathe, torus, loftRings, carRing } from '../lib/generate.js';
+import { buildRecipe, evaluateObject, evaluateDoc, applyMeshModifiers, KERNEL_VERSION } from '../src/host/kernel.js';
+import { indexMesh, moveVertices, extrudeFaces, meshPositions, meshEdges, WELD_TOLERANCE } from '../src/host/topology.js';
+import { box, sphere, lathe, torus, loftRings, carRing } from '../src/host/generate.js';
 
 // Run directly with Node. The browser bundle is exercised in a separate VM realm
 // without Node globals; its result is compared to the native ESM evaluator.
@@ -162,12 +162,12 @@ test('vertex, face, recipe, modifier, document and coordinate budgets are enforc
   assert.throws(()=>evaluateDoc({budget:{maxObjects:1},objects:[{parts:[{kind:'box'},{kind:'box'}]}]}),/object budget/);
 });
 test('ESM browser bundle evaluates identical recipes, hierarchy, modifiers and normals',async()=>{
-  const result=await build({entryPoints:[new URL('../lib/kernel.js',import.meta.url).pathname.replace(/^\/([A-Za-z]:)/,'$1')],bundle:true,platform:'browser',format:'iife',globalName:'Kernel',write:false,logLevel:'silent'});
+  const result=await build({entryPoints:[new URL('../src/host/kernel.js',import.meta.url).pathname.replace(/^\/([A-Za-z]:)/,'$1')],bundle:true,platform:'browser',format:'iife',globalName:'Kernel',write:false,logLevel:'silent'});
   const context=vm.createContext({});vm.runInContext(result.outputFiles[0].text,context,{timeout:10000});
   const input={version:2,objects:[{id:'body',position:[2,1,0],rotation:[.2,.3,-.1],recipe:{type:'sectionLoft',params:{sections:stations,profile,steps:2}},modifiers:[{type:'array',count:2,offset:[3,0,0]},{type:'solidify',thickness:.03}],shading:'smooth'}]};
   context.input=JSON.stringify(input);const browser=vm.runInContext('JSON.stringify(Kernel.evaluateDoc(JSON.parse(input)))',context,{timeout:10000});assert.deepEqual(JSON.parse(browser),JSON.parse(JSON.stringify(evaluateDoc(input))));
   // Source-level guard keeps host-only packages out of the browser kernel.
-  for(const path of ['../lib/kernel.js','../lib/topology.js']){const source=await readFile(new URL(path,import.meta.url),'utf8');assert.doesNotMatch(source,/from\s+['"](?:node:|three)/);}
+  for(const path of ['../src/host/kernel.js','../src/host/topology.js']){const source=await readFile(new URL(path,import.meta.url),'utf8');assert.doesNotMatch(source,/from\s+['"](?:node:|three)/);}
 });
 
 let failed=0;

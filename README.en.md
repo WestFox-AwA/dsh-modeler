@@ -82,7 +82,7 @@ Most "AI + 3D" setups stop at generating a mesh file. `dsh-modeler` gives the ag
 git clone https://github.com/WestFox-AwA/dsh-modeler.git
 cd dsh-modeler
 npm install
-node build.mjs
+node scripts/build.mjs
 ```
 
 Then install the repository folder with `install_bundle` exactly as in step 4, and refresh the page.
@@ -128,15 +128,15 @@ An explicit `displayMode` always overrides the purpose. A public capture with no
 ## Repository layout
 
 ```text
-index.js              Host plugin: tools, routes, resource wiring
-src/                  Browser sources: workbench, renderer, observation, floor, materials
+index.js              Host plugin entry: tools, routes, resource wiring
+src/                  Sources: client.* (browser), host/ (Host logic), runtime/ (Blender worker)
 client.js             Built browser bundle (loaded by DSH)
 capture.js            Built capture renderer bundle
-lib/                  Kernel, workspace, materials, evidence, guides, operations
-runtime/              Optional Blender-backed native geometry/material worker
+dist/                 Build identity (client-build.json)
+assets/               Icon, locale, Cordis patch
 docs/                 Agent guides and contracts (start at docs/AGENT-GUIDE.md)
 tests/                Self-contained regression suites
-build.mjs             Bundles src/ into client.js and capture.js
+scripts/build.mjs     Bundles src/ into client.js and capture.js
 ```
 
 ## Data and privacy

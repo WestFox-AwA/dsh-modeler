@@ -3,9 +3,9 @@ import { pathToFileURL } from 'node:url';
 
 // Merging must be a pure object-count win: same triangles, same bounds, same
 // watertightness, and it must carry baked transforms with it.
-const { runModelerScript } = await import(pathToFileURL(path.resolve('lib/script.js')).href);
-const { worldBounds } = await import(pathToFileURL(path.resolve('lib/assembly.js')).href);
-const { auditDoc } = await import(pathToFileURL(path.resolve('lib/audit.js')).href);
+const { runModelerScript } = await import(pathToFileURL(path.resolve('src/host/script.js')).href);
+const { worldBounds } = await import(pathToFileURL(path.resolve('src/host/assembly.js')).href);
+const { auditDoc } = await import(pathToFileURL(path.resolve('src/host/audit.js')).href);
 
 const tests = [];
 const build = (code) => {

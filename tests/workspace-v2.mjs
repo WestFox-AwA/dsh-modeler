@@ -1,12 +1,12 @@
-import {createStorage} from '../lib/storage.js';
+import {createStorage} from '../src/host/storage.js';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
-import { createWorkspace, canonicalContent, contentHash } from '../lib/workspace.js';
-import { buildRecipe, evaluateDoc, evaluateObject } from '../lib/kernel.js';
-import { meshEdges } from '../lib/topology.js';
+import { createWorkspace, canonicalContent, contentHash } from '../src/host/workspace.js';
+import { buildRecipe, evaluateDoc, evaluateObject } from '../src/host/kernel.js';
+import { meshEdges } from '../src/host/topology.js';
 
 // All disk mutations, including failure injection, are confined to this test-owned
 // directory. Never import the plugin entry or the old home-directory run history.

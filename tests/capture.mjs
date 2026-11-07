@@ -2,11 +2,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
-import {createEvidenceStore,normaliseCapture} from '../lib/evidence.js';
-import {createRenderWorker} from '../lib/render-worker.js';
-import {encodePng} from '../lib/png.js';
-import {KERNEL_VERSION} from '../lib/kernel.js';
-import {resolveCamera} from '../lib/camera.js';
+import {createEvidenceStore,normaliseCapture} from '../src/host/evidence.js';
+import {createRenderWorker} from '../src/host/render-worker.js';
+import {encodePng} from '../src/host/png.js';
+import {KERNEL_VERSION} from '../src/host/kernel.js';
+import {resolveCamera} from '../src/host/camera.js';
 const here=path.dirname(fileURLToPath(import.meta.url)),temp=fs.mkdtempSync(path.join(here,'.capture-')),tests=[];
 async function check(name,fn){try{await fn();tests.push({name,passed:true});}catch(e){tests.push({name,passed:false,error:e.stack});}}
 const identity={assetId:'capture-test',contentHash:'a'.repeat(64),revision:1};const cam={projection:'perspective',eye:[3,2,4],target:[0,0,0],up:[0,1,0],fov:42};

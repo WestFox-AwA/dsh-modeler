@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {observationCameraClipping} from '../lib/camera.js';
+import {observationCameraClipping} from './host/camera.js';
 
 const NAME='modeler-observation-floor';
 const MAX_SPAN=100000;

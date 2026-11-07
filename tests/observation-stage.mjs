@@ -9,12 +9,12 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import * as THREE from 'three';
-import {runModelerScript} from '../lib/script.js';
-import {KERNEL_VERSION} from '../lib/kernel.js';
-import {resolveCamera} from '../lib/camera.js';
-import {encodePng} from '../lib/png.js';
-import {normaliseCapture,createEvidenceStore} from '../lib/evidence.js';
-import {getActionHelp} from '../lib/action-help.js';
+import {runModelerScript} from '../src/host/script.js';
+import {KERNEL_VERSION} from '../src/host/kernel.js';
+import {resolveCamera} from '../src/host/camera.js';
+import {encodePng} from '../src/host/png.js';
+import {normaliseCapture,createEvidenceStore} from '../src/host/evidence.js';
+import {getActionHelp} from '../src/host/action-help.js';
 import {
   OBSERVATION_MODES,
   DISPLAY_MODES,
@@ -24,7 +24,7 @@ import {
   normalizeObservationLighting,
   observationStagePolicy,
   resolveObservationPlan,
-} from '../lib/observation-stage.js';
+} from '../src/host/observation-stage.js';
 import {
   material,
   createSnapshotMeshes,

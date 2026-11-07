@@ -9,17 +9,17 @@
 Host (index.js)
   tools: modeler_geometry / modeler_material / modeler_workbench / modeler_capture ...
   resources: versioned workspace store (~/.dsh/modeler-resources)
-  lib/: kernel, workspace, materials, evidence, guides, operations
+  src/host/: kernel, workspace, materials, evidence, guides, operations
         │
-        ├── optional Blender worker (runtime/): native geometry, material bakes
+        ├── optional Blender worker (src/runtime/): native geometry, material bakes
         │
         └── render worker: owned headless browser running capture.js
 Browser (client.js)
-  client.workbench.js   panel, viewport, lighting UI
-  client.render.js      snapshot meshes, material construction, capture renderer
-  client.observation.js observation stage: lights, shadows, overlays
-  client.environment.js one linear HDR studio environment
-  client.floor.js       continuous planar mirror floor
+  src/client.workbench.js   panel, viewport, lighting UI
+  src/client.render.js      snapshot meshes, material construction, capture renderer
+  src/client.observation.js observation stage: lights, shadows, overlays
+  src/client.environment.js one linear HDR studio environment
+  src/client.floor.js       continuous planar mirror floor
 ```
 
 ## Identity and versions

@@ -8,28 +8,24 @@
     ".": "./index.js",
     "./delivery": "./lib/delivery-package.js",
     "./client": "./client.js",
-    "./icon": "./icon.svg",
+    "./icon": "./assets/icon.svg",
     "./package.json": "./package.json",
-    "./locale/*.json": "./locale/*.json"
+    "./locale/*.json": "./assets/locale/*.json"
   },
   "files": [
     "index.js",
     "client.js",
-    "client-build.json",
-    "cordis.patch.yml",
-    "icon.svg",
-    "locale/",
-    "lib/",
+    "capture.js",
+    "dist/",
+    "src/",
+    "assets/",
     "docs/",
     "README.md",
-    "capture.js",
-    "src/",
-    "runtime/",
     "README.en.md"
   ],
   "dsh": {
     "bundle": {
-      "patch": "./cordis.patch.yml"
+      "patch": "./assets/cordis.patch.yml"
     },
     "client": {
       "platform": "web",
@@ -40,7 +36,7 @@
       ]
     }
   },
-  "icon": "./icon.svg",
+  "icon": "./assets/icon.svg",
   "peerDependencies": {
     "@deepseek-ai/dsh-tools": ">=0.0.1-rc <2"
   },
@@ -55,7 +51,7 @@
     "react-dom": "^18.3.1"
   },
   "scripts": {
-    "build": "node build.mjs",
+    "build": "node scripts/build.mjs",
     "test": "node tests/run-all.mjs"
   },
   "dependencies": {

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import * as T from 'three';
 import {PlanarFloor,createGroundGeometry} from '../src/client.floor.js';
-import {observationCameraClipping} from '../lib/camera.js';
+import {observationCameraClipping} from '../src/host/camera.js';
 const tests=[];const check=(name,fn)=>{try{const detail=fn();tests.push({name,passed:true,detail});}catch(e){tests.push({name,passed:false,error:e.stack});}};
 const bits=24,levels=2**bits-1;
 check('contact surface and floor stay separated at the same pixel over scaled orbit paths',()=>{

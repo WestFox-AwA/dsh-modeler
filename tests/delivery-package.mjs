@@ -7,7 +7,7 @@ import {
   DELIVERY_SCHEMA_VERSION,
   DELIVERY_LIMITS,
   DELIVERY_MATERIAL_FIDELITY,
-} from '../lib/delivery-package.js';
+} from '../src/host/delivery-package.js';
 
 const tests = [];
 async function run(name, fn) {

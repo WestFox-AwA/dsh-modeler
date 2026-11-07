@@ -6,7 +6,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {build} from 'esbuild';
-import {assertToolValue} from '../lib/tool-value.js';
+import {assertToolValue} from '../src/host/tool-value.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const temp = fs.mkdtempSync(path.join(root, 'tests/.delivery-action-'));

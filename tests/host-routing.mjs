@@ -4,8 +4,8 @@ import os from 'node:os';
 import assert from 'node:assert/strict';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {build} from 'esbuild';
-import {assertToolValue} from '../lib/tool-value.js';
-import {encodePng} from '../lib/png.js';
+import {assertToolValue} from '../src/host/tool-value.js';
+import {encodePng} from '../src/host/png.js';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),temp=fs.mkdtempSync(path.join(root,'tests/.host-routing-'));
 const bundle=path.join(root,'.test-host-'+path.basename(temp)+'.mjs'),tests=[];
 async function test(name,fn){try{await fn();tests.push({name,passed:true});}catch(error){tests.push({name,passed:false,error:error.stack});}}

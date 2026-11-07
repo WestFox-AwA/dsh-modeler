@@ -1,6 +1,6 @@
 # Construct persistent API3 geometry
 
-> Generated from `lib/guide-system.js`; do not hand-edit. Runtime source of truth:
+> Generated from `src/host/guide-system.js`; do not hand-edit. Runtime source of truth:
 > `{"tool":"modeler_workbench","args":{"action":"guide","args":{"id":"construct"}}}`.
 > Call descriptors shaped {tool,args} mean: invoke that tool with args. Do not pass the tool field as a tool argument.
 

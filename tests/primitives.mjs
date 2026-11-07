@@ -1,11 +1,11 @@
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { worldBounds } from '../lib/assembly.js';
+import { worldBounds } from '../src/host/assembly.js';
 
 // The failure this must catch: an extruded profile placed with a hand-derived
 // Euler rotation ends up lying in the wrong plane and still passes every other
 // check, because a flat slab is perfectly valid geometry.
-const { runModelerScript } = await import(pathToFileURL(path.resolve('lib/script.js')).href);
+const { runModelerScript } = await import(pathToFileURL(path.resolve('src/host/script.js')).href);
 
 const tests = [];
 const near = (a, b, eps = 1e-6) => Math.abs(a - b) <= eps;

@@ -1001,7 +1001,7 @@ export function renderGuideMarkdown(id = 'main') {
 
   push(`# ${guide.title}`, '');
   push(
-    '> Generated from `lib/guide-system.js`; do not hand-edit. Runtime source of truth:',
+    '> Generated from `src/host/guide-system.js`; do not hand-edit. Runtime source of truth:',
     `> ${json(guide.retrieval || guide.next)}.`,
     `> ${guide.callConvention}`,
     ''

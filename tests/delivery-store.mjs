@@ -6,8 +6,8 @@ import {
   deliveryStoreRoot,
   DELIVERY_FILE_PATTERN,
   DELIVERY_STORE_LIMIT,
-} from '../lib/delivery-store.js';
-import {buildDeliveryPackage, deliveryDigest} from '../lib/delivery-package.js';
+} from '../src/host/delivery-store.js';
+import {buildDeliveryPackage, deliveryDigest} from '../src/host/delivery-package.js';
 
 const tests = [];
 async function run(name, fn) {

@@ -2,9 +2,9 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createResources } from '../lib/resources.js';
-import { createWorkspace } from '../lib/workspace.js';
-import { createStorage, fileFingerprint } from '../lib/storage.js';
+import { createResources } from '../src/host/resources.js';
+import { createWorkspace } from '../src/host/workspace.js';
+import { createStorage, fileFingerprint } from '../src/host/storage.js';
 
 // Every fixture, including legacy imports and disk-fault injection, is owned by
 // this test. Do not import index.js or access a profile's live resource files.

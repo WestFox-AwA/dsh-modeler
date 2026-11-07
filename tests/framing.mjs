@@ -3,8 +3,8 @@ import { pathToFileURL } from 'node:url';
 
 // The framing metric must report what the camera sees, not what exists: a part
 // behind another part has zero share, and the shares must partition the model.
-const { runModelerScript } = await import(pathToFileURL(path.resolve('lib/script.js')).href);
-const { auditFraming } = await import(pathToFileURL(path.resolve('lib/assembly.js')).href);
+const { runModelerScript } = await import(pathToFileURL(path.resolve('src/host/script.js')).href);
+const { auditFraming } = await import(pathToFileURL(path.resolve('src/host/assembly.js')).href);
 
 const opts = { res: 240, eye: [0, 1, 6], target: [0, 1, 0], fov: 45 };
 // distinct names: share is grouped by name, so identical names collapse into one row

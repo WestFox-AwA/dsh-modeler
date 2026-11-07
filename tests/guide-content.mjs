@@ -10,7 +10,7 @@ import {
   MODELER_GUIDE_IDS,
   MODELER_GUIDE_PROMPT,
   renderGuideMarkdown,
-} from '../lib/guide-system.js';
+} from '../src/host/guide-system.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ids = [...MODELER_GUIDE_IDS];
@@ -92,14 +92,14 @@ assert.ok(MODELER_GUIDE_PROMPT.includes('assetId/contentHash'), 'prompt: version
 assert.ok(MODELER_GUIDE_PROMPT.includes('automatic display preparation'), 'prompt: material prep essential');
 
 // The reader is pure: no imports, fs, resource registry, backend or service.
-const source = fs.readFileSync(path.join(root, 'lib', 'guide-system.js'), 'utf8');
+const source = fs.readFileSync(path.join(root, 'src', 'host', 'guide-system.js'), 'utf8');
 assert.ok(!/^\s*import\s/m.test(source), 'reader: no imports');
 assert.ok(!/\b(readFile|writeFile|readdirSync|createResources|backend\.request)\b/.test(source), 'reader: no I/O or service calls');
 
 // Docs are generated from the same data; a stale hand edit must fail this test.
 for (const id of ids) {
   assert.equal(readDoc(id), renderGuideMarkdown(id), `${id}: docs match guide data`);
-  assert.ok(readDoc(id).includes('Generated from `lib/guide-system.js`'), `${id}: generated notice`);
+  assert.ok(readDoc(id).includes('Generated from `src/host/guide-system.js`'), `${id}: generated notice`);
   assert.ok(readDoc(id).includes(JSON.stringify(expectedRef(id))), `${id}: canonical call in docs`);
 }
 

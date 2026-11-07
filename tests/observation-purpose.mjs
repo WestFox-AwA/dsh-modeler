@@ -1,9 +1,9 @@
 import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';
-import {resolveCaptureSelection,CAPTURE_PURPOSES,PURPOSE_DISPLAY_MODES,purposeForEdit,observationForEdit,editObservationRequest} from '../lib/observation-purpose.js';
-import {createModelerOperations} from '../lib/operations.js';
-import {createEvidenceStore,normaliseCapture} from '../lib/evidence.js';
+import {resolveCaptureSelection,CAPTURE_PURPOSES,PURPOSE_DISPLAY_MODES,purposeForEdit,observationForEdit,editObservationRequest} from '../src/host/observation-purpose.js';
+import {createModelerOperations} from '../src/host/operations.js';
+import {createEvidenceStore,normaliseCapture} from '../src/host/evidence.js';
 import {normalizeObservation,createSnapshotMeshes,disposeMeshes} from '../src/client.render.js';
-import {runModelerScript} from '../lib/script.js';import {KERNEL_VERSION} from '../lib/kernel.js';import {resolveCamera} from '../lib/camera.js';import {encodePng} from '../lib/png.js';
+import {runModelerScript} from '../src/host/script.js';import {KERNEL_VERSION} from '../src/host/kernel.js';import {resolveCamera} from '../src/host/camera.js';import {encodePng} from '../src/host/png.js';
 const tests=[];async function check(name,fn){try{await fn();tests.push({name,passed:true});}catch(e){tests.push({name,passed:false,error:e.stack});}}
 const temp=fs.mkdtempSync(path.resolve('tests/.observation-purpose-'));
 const identity={assetId:'purpose-fixture',revision:1,contentHash:'a'.repeat(64)},bounds={min:[-1,-1,-1],max:[1,1,1]},doc=runModelerScript("return m.scene('Selection',[m.box().shade('flat').key('panel')]);");

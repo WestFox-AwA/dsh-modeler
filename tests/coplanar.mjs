@@ -4,8 +4,8 @@ import { pathToFileURL } from 'node:url';
 // Faces that share a plane over the same area cannot be depth-ordered: they
 // shimmer as the camera moves. The fixtures pin the exact case and the two
 // near-misses that must stay silent.
-const { runModelerScript } = await import(pathToFileURL(path.resolve('lib/script.js')).href);
-const { auditCoplanar } = await import(pathToFileURL(path.resolve('lib/intersect.js')).href);
+const { runModelerScript } = await import(pathToFileURL(path.resolve('src/host/script.js')).href);
+const { auditCoplanar } = await import(pathToFileURL(path.resolve('src/host/intersect.js')).href);
 
 const tests = [];
 function test(name, code, expectPairs) {
