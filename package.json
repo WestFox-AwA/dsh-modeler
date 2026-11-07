@@ -7,21 +7,18 @@
   "exports": {
     ".": "./index.js",
     "./delivery": "./lib/delivery-package.js",
-    "./client": "./client.js",
+    "./client": "./dist/client.js",
     "./icon": "./assets/icon.svg",
     "./package.json": "./package.json",
     "./locale/*.json": "./assets/locale/*.json"
   },
   "files": [
     "index.js",
-    "client.js",
-    "capture.js",
     "dist/",
     "src/",
     "assets/",
     "docs/",
     "README.md",
-    "README.en.md",
     "scripts/"
   ],
   "dsh": {

@@ -184,7 +184,7 @@ export function createRenderWorker({root,buildInfo,snapshot,timeoutMs=45000,brow
      if(req.method==='GET'&&file===''){
       res.setHeader('Content-Type','text/html; charset=utf-8');res.end('<!doctype html><meta charset="utf-8"><title>Modeler capture worker</title><canvas id="capture"></canvas><script src="capture.js"></script>');
      }else if(req.method==='GET'&&file==='capture.js'){
-      res.setHeader('Content-Type','text/javascript');fs.createReadStream(path.join(root,'capture.js')).on('error',fail).pipe(res);
+      res.setHeader('Content-Type','text/javascript');fs.createReadStream(path.join(root,'dist','capture.js')).on('error',fail).pipe(res);
      }else if(req.method==='GET'&&file==='job.json'){
       if(served){res.writeHead(410).end();return;}served=true;res.setHeader('Content-Type','application/json');res.end(json);json=null;
      }else if(req.method==='POST'&&file==='result'){

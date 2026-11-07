@@ -1,6 +1,6 @@
 # dsh-modeler
 
-[中文](README.md) | **English**
+[中文](../README.md) | **English**
 
 **A built-in 3D modeling studio for DeepSeek Harness, built on Three.js.**
 
@@ -130,9 +130,7 @@ An explicit `displayMode` always overrides the purpose. A public capture with no
 ```text
 index.js              Host plugin entry: tools, routes, resource wiring
 src/                  Sources: client.* (browser), host/ (Host logic), runtime/ (Blender worker)
-client.js             Built browser bundle (loaded by DSH)
-capture.js            Built capture renderer bundle
-dist/                 Build identity (client-build.json)
+dist/                 Built bundles: client.js (loaded by DSH), capture.js, client-build.json
 assets/               Icon, locale, Cordis patch
 docs/                 Agent guides and contracts (start at docs/AGENT-GUIDE.md)
 tests/                Self-contained regression suites

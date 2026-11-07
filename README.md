@@ -1,6 +1,6 @@
 # dsh-modeler
 
-**中文** | [English](README.en.md)
+**中文** | [English](docs/README.en.md)
 
 **DeepSeek Harness 的内置 3D 建模工作室，以 Three.js 为核心。**
 
@@ -130,9 +130,7 @@ modeler_capture   {purpose:"appearance"}                  # 材质截图
 ```text
 index.js              Host 插件入口：工具、路由、资源接线
 src/                  源码：client.*（浏览器）、host/（Host 逻辑）、runtime/（Blender worker）
-client.js             构建后的浏览器包（DSH 直接加载）
-capture.js            构建后的截图渲染包
-dist/                 构建身份（client-build.json）
+dist/                 构建产物：client.js（DSH 加载）、capture.js、client-build.json
 assets/               图标、locale、Cordis 补丁
 docs/                 代理指南与契约（从 docs/AGENT-GUIDE.md 开始）
 tests/                自包含回归套件

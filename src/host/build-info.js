@@ -10,7 +10,7 @@ export function readBuildInfo(root){
  const info=JSON.parse(fs.readFileSync(path.join(root,'dist/client-build.json'),'utf8'));
  if(info.kernelBuildId!==sharedKernelHash(root))throw new Error('客户端与主机几何内核不一致：请先 node build.mjs 再重载插件');
  if(info.renderingHash!==renderingHash(root))throw new Error('截图/视口源码与构建回执不一致：请先 node build.mjs');
- if(info.bundleHash!==sha256(fs.readFileSync(path.join(root,'client.js'))))throw new Error('客户端产物与构建回执不一致');
- if(info.captureBundleHash!==sha256(fs.readFileSync(path.join(root,'capture.js'))))throw new Error('截图渲染产物与构建回执不一致');
+ if(info.bundleHash!==sha256(fs.readFileSync(path.join(root,'dist','client.js'))))throw new Error('客户端产物与构建回执不一致');
+ if(info.captureBundleHash!==sha256(fs.readFileSync(path.join(root,'dist','capture.js'))))throw new Error('截图渲染产物与构建回执不一致');
  return info;
 }
