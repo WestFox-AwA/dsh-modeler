@@ -4,7 +4,7 @@ This page is written so that an AI agent can follow it without guessing.
 
 ## 1. Get the package
 
-Download `dsh-modeler-1.0.0-alpha-2.zip` from the GitHub **Releases** page and
+Download `dsh-modeler-1.0.0-alpha-3.zip` from the GitHub **Releases** page and
 extract it. The extracted directory must contain `package.json` and `index.js`
 at its root — not inside a nested folder.
 

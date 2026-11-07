@@ -6,7 +6,7 @@
 
 `dsh-modeler` 把一个 DSH 对话会话变成持久、可版本化的 3D 建模工作区：代理可以创建与编辑几何、准备 PBR 材质、用真实 Three.js 渲染观察结果，并交付确切版本——全程不离开 Harness。
 
-> 当前版本 **`1.0.0-alpha-2`**。功能可用且经过测试，但 alpha 阶段仍可能调整工具契约。
+> 当前版本 **`1.0.0-alpha-3`**。功能可用且经过测试，但 alpha 阶段仍可能调整工具契约。
 
 ## 效果展示
 
@@ -56,7 +56,7 @@
 
 ### 从 GitHub Release 安装（推荐）
 
-1. 打开 **Releases**，下载 `dsh-modeler-1.0.0-alpha-2.zip`。
+1. 打开 **Releases**，下载 `dsh-modeler-1.0.0-alpha-3.zip`。
 2. 解压到一个固定的绝对路径，例如：
    - Windows：`C:\Users\<你>\dsh-modeler`
    - macOS/Linux：`~/dsh-modeler`
@@ -145,7 +145,7 @@ scripts/build.mjs     打包 src/ → client.js 与 capture.js
 
 ## 版本与许可
 
-`1.0.0-alpha-2` 是第二个公开 alpha。工具契约通过 `modeler_workbench {action:"help"}` 与指南给出；alpha 期间行为仍可能调整，需要稳定请固定版本。
+`1.0.0-alpha-3` 是第三个公开 alpha。工具契约通过 `modeler_workbench {action:"help"}` 与指南给出；alpha 期间行为仍可能调整，需要稳定请固定版本。
 
 [MIT](LICENSE) © WestFox-AwA
 
