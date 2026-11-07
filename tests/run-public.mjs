@@ -1,0 +1,6 @@
+import fs from 'node:fs';import path from 'node:path';import {spawnSync} from 'node:child_process';import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const names=["primitives","coplanar","intersections","mirror","framing","merge","split","hull","kernel-v2","workspace-v2","camera-preview","capture","observation-stage","observation-purpose","lighting-runtime","ground-contact","glass-optics","guide-content","discovery","host-routing","help-routing","resources","delivery-package","delivery-store","delivery-action","task-material-task"];
+let failed=0;
+for(const name of names){const r=spawnSync(process.execPath,[path.join(root,'tests',name+'.mjs')],{cwd:root,encoding:'utf8',timeout:120000,maxBuffer:16*1024*1024});const log=(r.stdout||'')+(r.stderr||'');let summary=null;try{summary=JSON.parse(r.stdout).summary;}catch{}const ok=r.status===0&&!r.error&&(!summary||summary.failed===0);if(!ok)failed++;console.log(ok?'PASS':'FAIL',name,summary?summary.passed+'/'+summary.tests:'',ok?'':log.slice(-600).replace(/s+/g,' '));}
+console.log('RESULT',names.length-failed+'/'+names.length);process.exitCode=failed?1:0;

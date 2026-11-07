@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Modeler Studio",
+    "description": "Persistent modeling with a studio workspace, bounded off-thread display loading and shared material rendering."
+  }
+}
