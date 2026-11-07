@@ -1,0 +1,90 @@
+{
+  "name": "@local/dsh-modeler",
+  "version": "1.0.0-alpha-1",
+  "private": true,
+  "type": "module",
+  "description": "DSH 内置建模工作室：以 Three.js 为核心的可编辑持久 3D 资产、自动材质准备、统一观察意图与版本化交付。",
+  "exports": {
+    ".": "./index.js",
+    "./delivery": "./lib/delivery-package.js",
+    "./client": "./client.js",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "client-build.json",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/",
+    "lib/",
+    "docs/",
+    "README.md",
+    "capture.js",
+    "client.render.js",
+    "client.observation.js",
+    "client.environment.js",
+    "client.floor.js",
+    "capture.worker.js",
+    "client.workbench.js",
+    "runtime/",
+    "client.surface.js",
+    "client.geometry.js",
+    "client.shading.js",
+    "client.selection.js",
+    "client.export.js",
+    "client.material.js",
+    "client.transport.js",
+    "client.studio.js"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "icon": "./icon.svg",
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.0.1-rc <2"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node tests/run-all.mjs"
+  },
+  "dependencies": {
+    "three": "^0.160.1"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WestFox-AwA/dsh-modeler.git"
+  },
+  "homepage": "https://github.com/WestFox-AwA/dsh-modeler#readme",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "modeler",
+    "three.js",
+    "3d",
+    "plugin"
+  ]
+}

@@ -1,0 +1,16 @@
+node_modules/
+releases/
+verification/
+focusedverification/
+tests/.tmp/
+tests/.observation-*/
+tests/.capture-*/
+tests/.host-routing-*/
+tests/.help-routing-*/
+*.log
+.DS_Store
+Thumbs.db
+.tmp/
+
+# test artifacts
+modeler-render.png
